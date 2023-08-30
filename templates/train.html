@@ -1,0 +1,139 @@
+<html>
+    <head>
+        <title>HURRAH</title>
+        <style>
+            #child {
+                
+                
+                /* Center vertically and horizontally */
+                position: absolute;
+                top: 40%;
+                left: 20%;
+                margin: -25px 0 0 -25px; /* Apply negative top and left margins to truly center the element */
+              }
+              #p{
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 20px;
+                font-weight: bold;
+              }
+        </style>
+
+    </head>
+    <body background="efg.jpg">
+        
+       <center>  
+        <middle>
+        <form id="child" action='/predict' method="POST">
+            <label id="p"> date</label>
+            <select name="date" >
+                <option value = "1" selected>1</option>
+                <option value = "2">2</option>
+                <option value = "3" >3</option>
+                <option value = "4">4</option>
+
+            </select>
+            <label id="p"> month</label>
+            <select name="month" >
+                <option value = "1" selected>1</option>
+                <option value = "2">2</option>
+                <option value = "3" >3</option>
+                <option value = "4">4</option>
+
+            </select>
+            <label id="p"> date</label>
+            <select name="year" >
+                <option value = "1" selected>2015</option>
+                <option value = "2">2022</option>
+                <option value = "3" >2023</option>
+                <option value = "4">2021</option>
+
+            </select>
+            
+
+           <middle>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <label id="p">Day:</label>
+            <select name = "dropdown" name="day">
+                <option value = "Sunday" selected>SUNDAY</option>
+                <option value = "Monday">MONDAY</option>
+                <option value = "Tuesday" >TUESDAY</option>
+                <option value = "wednesday">WEDNESDAY</option>
+                <option value = "thursday">THURSDAY</option>
+                <option value = "friday">FRIDAY</option>
+                <option value = "saturday">SATURDAY</option>
+             </select></middle>
+             <right>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <label id="p">Time:</label>
+            <input type="time" id="p1" name="time"></right>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <br>
+            <label id="p"> Temperature:</label><input type="number" name="temperature">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <label id="p">Is_Holiday:</label>
+            <select name = "dropdown" name="is_holiday">
+                <option value = "Yes" selected>YES</option>
+                <option value = "No">NO</option>
+            </select> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <label id="p">Climate Condition: </label>
+            <select name = "dropdown" name="x0">
+                <option value = "a" selected>Clear</option>
+                <option value = "b">Clouds</option>
+                <option value = "c" >Drizzle</option>
+                <option value = "d">Fog</option>
+                <option value = "e">Haze</option>
+                <option value = "friday">Mist</option>
+                <option value = "saturday">Rain</option>
+                <option value = "Monday">Smoke</option>
+                <option value = "Tuesday" >Snow</option>
+                <option value = "wednesday">Thunderstrom</option>
+                <option value = "thursday">Squall</option>
+             </select> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             <label id="p">Weather Desciption:</label>
+             <select name = "dropdown" name="x1">
+                <option value = "a" selected>Broken Clouds</option>
+                <option value = "b">Hue Clouds</option>
+                <option value = "c" >Drizzle</option>
+                <option value = "d">Fog</option>
+                <option value = "e">Haze</option>
+                <option value = "f">Mist</option>
+                <option value = "g"> Freezing Rain</option>
+                <option value = "h">Smoke</option>
+                <option value = "i" >Snow</option>
+                <option value = "j">Thunderstrom</option>
+                <option value = "k">Squall</option>
+                <option value = "l">Heavy Snow</option>
+                <option value = "m">Heavy Intensity Rain</option>
+                <option value = "n">Heavy Intensity Drizzle</option>
+                <option value = "o" >Light Intensity Shower Rain</option>
+                <option value = "p">Light Rain</option>
+                <option value = "q">Light Intensity Drizzle</option>
+                <option value = "r">Light Snow</option>
+                <option value = "s">modarete rain</option>
+                <option value = "f">Light rain and snow</option>
+                <option value = "g"> Light shower snow</option>
+                <option value = "h">Overcast Clouds</option>
+                <option value = "i" >Proximity shower rain</option>
+                <option value = "j">Proximity Thunderstrom</option>
+                <option value = "k">sky is clear</option>
+                <option value = "l">very heavy rain</option>
+                <option value = "m">Thunderstorm with Rain</option>
+                <option value = "n"> Thunderstorm with Drizzle</option>
+                <option value = "o" >Thunderstorm with Light drizzle</option>
+                <option value = "p">Thunderstorm with Light Rain</option>
+                <option value = "q">Thunderstorm with heavy rain</option>
+                <option value = "r">shower Snow</option>
+                <option value = "s">scuttered  clouds</option>
+             </select> 
+
+             <br>
+             <br>
+             <button type="submit" form="nameform" value="predict">Submit</button>
+
+
+    
+
+        </form>
+    
+    </middle>
+</center>
+    </body>
+</html>

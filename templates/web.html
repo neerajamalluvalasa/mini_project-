@@ -1,0 +1,83 @@
+<html>
+    <head>
+        <title>HOME</title>
+    </head>
+    <body background="back.jpg">
+        <center><h1 style="color:white;background-color:black ">Traffic Flow Prediction Based on Weather Conditions</h1>
+        <form action="/train">
+            <button type="SUBMIT" style="height: 50px; width:130px; background-color:chartreuse;font-style:oblique; border-radius:25px"><b>Click to Know</b></button>
+        </form></center>
+    </body>
+</html>
+
+
+
+
+
+
+<label id="p">Date:</label>
+            <left><input type="date" id="p1" name="date"><left
+
+
+
+
+
+                from functools import reduce
+def unique(list1):
+    ans=reduce(lambda re,x: re+[x] if x not in re else re,list1,[])
+    print(ans)
+
+    
+n1=data["weather_type"]
+
+n2=data["weather_description"]
+
+
+
+unique(n1)
+unique(n2)
+n1features=["Rain","Clouds","Clear","Snow","Mist","Drizzle","Haze","Thunderstorm","Fog","Smoke","Squall"]
+n2features=[]
+n11=[]
+n22=[]
+for i in range(9994):
+    if (n1[i]) not in n1features:
+        n11.append(0)
+    else:
+        n11.append((n1features.index(n1[i]))+1)
+    if (n2[i]) not in n2features:
+        n22.append(0)
+    else:
+        n22.append((n1features.index(n2[i]))+1)
+
+data["weather_type"]=n11
+data["weather_description"]=n22
+
+
+
+data["date_time"]=pd.to_datetime(data["date_time"])
+data["hour"]=data["date_time"].map(lambda x: int (x.strftime("%H")))
+data["month_day"]=data["date_time"].map(lambda x: int (x.strftime("%d")))
+data["weekday"]=data["date_time"].map(lambda x: x.weekday()+1)
+data["month"]=data["date_time"].map(lambda x: int (x.strftime("%m")))
+data["year"]=data["date_time"].map(lambda x: int (x.strftime("%Y")))
+data.to_csv("traffic_volume_data1.csv",index=None)
+
+
+
+
+
+
+data=data.sort_values(by=["date_time"],ascending=True).reset_index(drop=True)
+last_n_hours=[1,2,3,4,5,6]
+for n in last_n_hours:
+    data[f"last_{n}_hour_traffic"]=data["traffic_volume"].shift(n)
+data=data.dropna().reset_index(drop=True)
+
+
+
+x_scaler=MinMaxScaler()
+X = x_scaler.fit_transform(X)
+y_scaler=MinMaxScaler()
+y=y_scaler.fit_transform(y).flatten()
+warnings.filterwarnings("ignore")
